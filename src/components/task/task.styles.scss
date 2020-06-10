@@ -1,0 +1,27 @@
+
+    .task{
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        
+       width: 100%;
+        .edit-icon {
+            cursor: pointer;
+            width: 5%;
+        }
+        .delete-icon {
+            cursor: pointer;
+            width: 5%;
+        }
+        textarea {
+            font-family: inherit;
+            background-color: unset;
+            border: unset;
+            width: fit-content;
+            outline: unset;
+            resize: none;
+            height: 1rem;
+        }
+    }
+
+ 

@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #E63946;
+    color: white;
+    padding: 0 40px;
+    align-items: center;
+
+    .log-container {
+        display: flex;
+        justify-content: space-between;
+        width: 10%;
+        .is-active {
+            color: black;
+        }
+    }
+    span {
+        color: white;
+        
+    }
+}
