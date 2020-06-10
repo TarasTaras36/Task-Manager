@@ -29,15 +29,15 @@ const Header = () => {
             <span>SIGN OUT</span>
           </Link>
         ) : (
-          <NavLink activeClassName='is-active' to="/sign-in">
+          <NavLink exact activeClassName='is-active' to="/sign-in">
             <span>SIGN IN</span>
           </NavLink>
         )}
 
         {!userLoggedIn && (
-          <Link to="/sign-up">
+          <NavLink  exact activeClassName='is-active' to="/sign-up">
             <span>SIGN UP</span>
-          </Link>
+          </NavLink>
         )}
         
        

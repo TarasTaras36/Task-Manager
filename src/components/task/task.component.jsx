@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 
 import { ReactComponent as DeleteIcon } from "../../assets/trash.svg";
 import { ReactComponent as EditIcon } from "../../assets/pencil.svg";
@@ -14,11 +14,7 @@ const Task = ({ task, id }) => {
 
   const dispatch = useDispatch();
 
- 
   const editTask = (task) => {
-
-
-
     document.getElementById(task).focus();
   };
 
@@ -32,12 +28,17 @@ const Task = ({ task, id }) => {
         onChange={(e) => setTask(e.target.value)}
       />
 
-      <div className="edit-icon" onClick={() => editTask(id)}>
-        <EditIcon />
-      </div>
+      <div className="task-buttons">
+        <div className="edit-icon" onClick={() => editTask(id)}>
+          <EditIcon />
+        </div>
 
-      <div className="delete-icon" onClick={() => dispatch(deleteUserTask(id))}>
-        <DeleteIcon />
+        <div
+          className="delete-icon"
+          onClick={() => dispatch(deleteUserTask(id))}
+        >
+          <DeleteIcon />
+        </div>
       </div>
     </div>
   );

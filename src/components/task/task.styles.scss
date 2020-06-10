@@ -3,15 +3,16 @@
         display: flex;
         justify-content: space-between;
         margin: 10px 0;
+        width: 80%;
         
        width: 100%;
         .edit-icon {
             cursor: pointer;
-            width: 5%;
+            width: 20px;
         }
         .delete-icon {
             cursor: pointer;
-            width: 5%;
+            width: 20px;
         }
         textarea {
             font-family: inherit;
@@ -21,6 +22,16 @@
             outline: unset;
             resize: none;
             height: 1rem;
+            font-size: 20px;
+            height: 20px;
+        }
+
+        .task-buttons {
+            display: flex;
+            width: 10%;
+            justify-content: space-between;
+          
+
         }
     }
 

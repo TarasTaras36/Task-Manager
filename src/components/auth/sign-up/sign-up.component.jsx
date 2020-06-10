@@ -67,7 +67,7 @@ const SignUp = () => {
           </StyledButton>
         </div>
       </div>
-      {userLoggedIn && <Redirect to="/sign-in" />}
+      {userLoggedIn && <Redirect to="/" />}
     </React.Fragment>
   );
 };

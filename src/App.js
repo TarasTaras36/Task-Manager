@@ -31,10 +31,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-
+  
       <Route exact path="/sign-up" component={SignUp} />
 
-      <Route exact path="/sign-in" component={SignIn} />
+      <Route  path="/sign-in" component={SignIn} />
       <Route exact path="/task-manager" component={Main} />
     </div>
   );

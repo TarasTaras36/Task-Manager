@@ -6,15 +6,21 @@
     padding: 0 40px;
     align-items: center;
 
+    .is-active{
+        span{
+           color: black;
+        }
+        
+    }
+
     .log-container {
         display: flex;
         justify-content: space-between;
         width: 10%;
-        .is-active {
-            color: black;
-        }
+        
     }
     span {
+       
         color: white;
         
     }
