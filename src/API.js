@@ -2,7 +2,6 @@ import storage from "./storage";
 import { v4 as uuidv4 } from "uuid";
 
 class API {
-
   // static signIn(user) {
 
   // const fetchData = () => {
@@ -12,22 +11,31 @@ class API {
 
   // fetchData()
 
-
-
   // }
 
+  static replaceUserData() {
 
+    const loggedUser = storage.get("currentUser");
+    const userAccounts = storage.get("users");
+   
+        const ids = userAccounts.map((el) => el.id);
+        const elementIndex = ids.indexOf(loggedUser.id);
+        if (elementIndex !== -1) {
+          userAccounts[elementIndex] = loggedUser;
+        }
+
+        storage.set("users", userAccounts);
+    }
 
   static signUp(user) {
     const { name, password } = user;
     if (!user) {
-      
       return;
     }
     const userAccounts = storage.get("users") || [];
     const isUserExist = userAccounts.find((user) => user.name === name);
 
-    if (isUserExist) return;
+    if (isUserExist) return true;
 
     const newUser = {
       id: uuidv4(),
@@ -43,8 +51,6 @@ class API {
     alert("You account has been created, please log in");
 
     return newUser;
-
-
   }
 
   static signIn(user) {
@@ -56,7 +62,7 @@ class API {
     );
 
     if (!userExist) {
-      alert("user doesnt exist");
+      
       return false;
     }
 
@@ -94,27 +100,46 @@ class API {
 
     storage.set("currentUser", loggedUser);
 
-    const replaceData = () => {
-      const ids = userAccounts.map((el) => el.id);
-      const elementIndex = ids.indexOf(loggedUser.id);
-      if (elementIndex !== -1) {
-        userAccounts[elementIndex] = loggedUser;
-      }
-      return userAccounts;
-    };
+  
 
-    replaceData();
-
-    storage.set("users", userAccounts);
+  this.replaceUserData()
 
     return taskId;
   }
+
+  static editTask = (editedTask, taskId) => {
+    const loggedUser = storage.get("currentUser");
+
+   
+
+    loggedUser.tasks.map((item) => {
+      if (taskId == item.id) {
+        item.task = editedTask;
+      }
+    });
+
+    storage.set("currentUser", loggedUser);
+
+    this.replaceUserData()
+
+    return { editedTask, taskId };
+  };
 
   static restartUserSetion() {
     const loggedUser = storage.get("currentUser");
 
     return loggedUser.tasks;
   }
+
+ 
+      
+
+    
+        
+  
+  
+     
+  
 }
 
 export default API;

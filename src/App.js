@@ -14,16 +14,21 @@ import Header from "./components/header/header.component";
 
 import "./App.css";
 import storage from "./storage";
+import API from "./API";
 
 function App() {
   const dispatch = useDispatch();
 
+
   useEffect(() => {
     const loggedUser = storage.get("currentUser");
 
-    if (!loggedUser) return false;
+
+    if (!loggedUser) return;
+    
 
     dispatch(logInUser(loggedUser));
+
   }, [dispatch]);
 
 

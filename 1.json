@@ -1,0 +1,37 @@
+{
+    "posts": {
+      
+          "users": [
+              {
+                  "id": 1234234,
+                  "name": "Taras",
+                  "password":"123",
+                  "tasks":[
+                      {
+                          "id": 1123135,
+                          "task": "TASK"
+                      }
+                  ]
+              },
+              {
+                  "id": 24553,
+                  "name": "Nick",
+                  "password":"123",
+                  "tasks":[
+                      {
+                          "id": 1345345,
+                          "task": "NEW TASK"
+                      }
+                  ]
+              }
+          ]
+      
+    },
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 },
+      { "id": 2, "body": "some comment", "postId": 1 }
+    ],
+    "profile": {
+      "name": "typicode"
+    }
+  }

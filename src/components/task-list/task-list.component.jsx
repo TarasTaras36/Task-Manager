@@ -30,11 +30,13 @@ const TaskList = () => {
     <div className="task-list">
       <div className="tasks">
         <h1>Your task-list for today </h1>
+        {tasks.length == 0 && <h3>No tasks yet</h3>}
         {tasks &&
           tasks.map((el) => <Task key={el.id} id={el.id} task={el.task} />)}
         <div className="create-task">
           <div className='create-task-field'>
           <TextField
+            
             id="standard-basic"
             label="Type task"
             onChange={(e) => setTask(e.target.value)}
@@ -45,7 +47,7 @@ const TaskList = () => {
             <Button
               variant="outlined"
               color="secondary"
-              onClick={() => dispatch(addUserTask(newTask))}
+              onClick={() => task && dispatch(addUserTask(newTask))}
             >
               Create Task
             </Button>

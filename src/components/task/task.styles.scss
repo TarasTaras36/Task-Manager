@@ -1,38 +1,53 @@
 
-    .task{
+    .task-wrap{
         display: flex;
         justify-content: space-between;
+        align-items: center;
         margin: 10px 0;
         width: 80%;
+        height: 30px;
         
        width: 100%;
         .edit-icon {
             cursor: pointer;
             width: 20px;
         }
-        .delete-icon {
-            cursor: pointer;
-            width: 20px;
+
+        .task{
+            
+            width: 80%;
+            cursor: text;
         }
-        textarea {
+       
+        .input-edit {
             font-family: inherit;
             background-color: unset;
             border: unset;
             width: fit-content;
             outline: unset;
             resize: none;
+            padding: 0;
             height: 1rem;
-            font-size: 20px;
+            font-size: inherit;
             height: 20px;
         }
 
         .task-buttons {
             display: flex;
-            width: 10%;
+            width: 20%;
             justify-content: space-between;
-          
+            .delete-icon {
+                cursor: pointer;
+                width: 20px;
+                display: flex;
+                align-items: center;
+            }
+           
 
-        }
+            .submit-button {
+                margin-right: 50px;
+            }
+          }
     }
 
  
