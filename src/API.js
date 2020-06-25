@@ -2,17 +2,7 @@ import storage from "./storage";
 import { v4 as uuidv4 } from "uuid";
 
 class API {
-  // static signIn(user) {
-
-  // const fetchData = () => {
-  //   axios.get('https://my-json-server.typicode.com/TarasTaras36/demo/posts')
-  //   .then(res => (res.data.find(el => (el.users))))
-  // }
-
-  // fetchData()
-
-  // }
-
+ 
   static replaceUserData() {
 
     const loggedUser = storage.get("currentUser");
@@ -130,16 +120,6 @@ class API {
 
     return loggedUser.tasks;
   }
-
- 
-      
-
-    
-        
-  
-  
-     
-  
 }
 
 export default API;
